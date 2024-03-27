@@ -25,8 +25,8 @@ async function updateCoords(lat, lng) {
     longitude = lng;
     
     // put these values into the latitude/longitude text boxes
-    latitudeReadout.textContent = latitude.toFixed(4); 
-    longitudeReadout.textContent = longitude.toFixed(4);
+    latitudeReadout.textContent = latitude.toFixed(2); 
+    longitudeReadout.textContent = longitude.toFixed(2);
 
 }
 

@@ -3,11 +3,10 @@ body {
     color: white;
 }
 
-
 .main-container {
     width: 100%;
     font-family: monospace;
-    font-size: 15vw;
+    font-size: 22vw;
     margin: 0 auto;
 }
 
@@ -16,19 +15,9 @@ body {
 }
 
 .control-panel {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin: 16px;
-}
-
-.text-input-panel {
-    display: flex;
-    flex-direction: column;
-    padding: 0.25em;
-}
-
-.coordinateInput {
-    width: 8em;
-    padding: 0.25em;
+    align-items: center;
+    /* margin: 16px; */
 }
