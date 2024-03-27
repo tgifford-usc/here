@@ -7,8 +7,19 @@ const mainContainer = document.getElementById("mainContainer");
 let latitude = 0;
 let longitude = 0;
 
-latitudeReadout.textContent = "0";
-longitudeReadout.textContent = "0";
+latitudeReadout.innerHTML = `${0}&deg; ${0}&prime;`;
+longitudeReadout.innerHTML = `${0}&deg; ${0}&prime;`;
+
+function degreesToDegreesAndMinutes(x) {
+    let s = Math.sign(x);
+    let y = Math.abs(x);
+    let q = Math.floor(y);
+    let r = y - q;
+
+    let m = Math.round(r * 60);
+    let d = s * q;
+    return `${d}&deg; ${m}&prime;`
+}
 
 // when the coordinates change somehow, propagate that change everywhere
 async function updateCoords(lat, lng) {
@@ -25,9 +36,8 @@ async function updateCoords(lat, lng) {
     longitude = lng;
     
     // put these values into the latitude/longitude text boxes
-    latitudeReadout.textContent = latitude.toFixed(2); 
-    longitudeReadout.textContent = longitude.toFixed(2);
-
+    latitudeReadout.innerHTML = degreesToDegreesAndMinutes(latitude); 
+    longitudeReadout.innerHTML = degreesToDegreesAndMinutes(longitude);
 }
 
 
